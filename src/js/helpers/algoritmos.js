@@ -103,10 +103,10 @@ function pmCirc( xC, yC, r) {
 		point( xC + x, yC - y);
 		point( xC - x, yC + y);
 		point( xC - x, yC - y);
-		point( yC + y, xC + x);
-		point( yC + y, xC - x);
-		point( yC - y, xC + x);
-		point( yC - y, xC - x);
+		point( xC + y, yC + x);
+		point( xC + y, yC - x);
+		point( xC - y, yC + x);
+		point( xC - y, yC - x);
 	}
 }
 
