@@ -87,3 +87,49 @@ function Bresenham(x1, y1, x2, y2){
     }
 }
   
+function pmCirc( xC, yC, r) {
+	let x = -1;
+	let y = r;
+	let p = Math.round(5/4 - r);
+	while (x < y) {
+		x++;
+		if (p < 0) {
+			p = p + 2 * x + 1;
+		} else {
+			y --;
+			p = p + 2 * (x - y) + 1;
+		}
+		point( xC + x, yC + y);
+		point( xC + x, yC - y);
+		point( xC - x, yC + y);
+		point( xC - x, yC - y);
+		point( yC + y, xC + x);
+		point( yC + y, xC - x);
+		point( yC - y, xC + x);
+		point( yC - y, xC - x);
+	}
+}
+
+function elipse(xc, yc, rx, ry){
+	let x, y, p;
+
+	x = -1;
+	y = ry;
+
+	p = Math.round((ry*2) - (rx*2)*ry + 0.25*(rx*2));
+	y --;
+	while (y > 0) {
+		if (p > 0){
+			y --;
+		} else if (p < 0) {
+			x ++;
+		}
+		p = Math.round((ry*ry)*(x*x) + (rx*rx)*(y*y) - (rx*rx)*(ry*ry))+1;
+		
+		point(xc + x, yc + y);
+		point(xc + x, yc - y);
+		point(xc - x, yc + y);
+		point(xc - x, yc - y);
+	}
+
+}

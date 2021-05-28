@@ -13,6 +13,8 @@ function draw() {
   pintarCirculo(algorithms.pp, algorithms.pp, 1);
   pintarCirculo(algorithms.dda, algorithms.dda, 2);
   pintarCirculo(algorithms.bresenham, algorithms.bresenham, 3);
+  pmCirc(width / 3, 400, 200);
+  elipse((width / 3) * (2), 400, 300, 200);
   noLoop();
 }
 
